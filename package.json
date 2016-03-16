@@ -28,7 +28,7 @@
     "ember-cli-dependency-checker": "^1.2.0",
     "ember-cli-deploy": "0.6.0",
     "ember-cli-deploy-build-plus": "0.1.6",
-    "ember-cli-deploy-couchdb": "0.1.0-beta.3",
+    "ember-cli-deploy-couchdb": "0.1.0",
     "ember-cli-filter-by-query": "1.2.0",
     "ember-cli-font-awesome": "1.5.0",
     "ember-cli-htmlbars": "^1.0.3",
