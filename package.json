@@ -45,7 +45,7 @@
     "ember-data": "2.7.0",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.5",
-    "ember-pouch": "^3.2.1",
+    "ember-pouch": "^3.2.2",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
     "loader.js": "^4.0.11"
