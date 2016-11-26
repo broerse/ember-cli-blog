@@ -36,7 +36,7 @@
     "ember-cli-htmlbars-inline-precompile": "^0.3.5",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-jshint": "^2.0.1",
-    "ember-cli-bootstrap-css": "^0.1.0-beta.1",
+    "ember-cli-bootstrap-css": "^0.1.0",
     "ember-cli-marked": "^0.1.0",
     "ember-cli-moment-shim": "2.2.1",
     "ember-cli-pagination": "2.2.3",
