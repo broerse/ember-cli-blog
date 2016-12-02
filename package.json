@@ -21,7 +21,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.5.0",
     "broccoli-manifest": "0.0.7",
-    "broccoli-merge-trees": "^1.1.5",
+    "broccoli-merge-trees": "^1.2.0",
     "ember-ajax": "^2.5.2",
     "ember-cli": "2.8.0",
     "ember-cli-active-link-wrapper": "0.3.2",
