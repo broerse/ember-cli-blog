@@ -33,7 +33,7 @@
     "ember-cli-filter-by-query": "1.2.0",
     "ember-cli-htmlbars": "^1.1.1",
     "ember-cli-htmlbars-inline-precompile": "^0.3.6",
-    "ember-cli-inject-live-reload": "^1.4.1",
+    "ember-cli-inject-live-reload": "^1.6.0",
     "ember-cli-jshint": "^2.0.1",
     "ember-cli-marked": "^0.1.0",
     "ember-cli-moment-shim": "3.0.0",
