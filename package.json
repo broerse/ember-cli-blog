@@ -53,7 +53,7 @@
     "ember-pouch": "4.2.8",
     "ember-resolver": "^4.0.0",
     "ember-simple-auth-pouch": "0.1.0-beta.4",
-    "ember-source": "~2.13.3",
+    "ember-source": "~2.14.0",
     "loader.js": "^4.4.0",
     "phantomjs-prebuilt": "^2.1.14"
   },
