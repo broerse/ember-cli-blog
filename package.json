@@ -56,7 +56,7 @@
     "ember-service-worker-asset-cache": "^0.6.2",
     "ember-service-worker-index": "^0.6.1",
     "ember-simple-auth-pouch": "0.1.0-beta.5",
-    "ember-source": "~2.15.0",
+    "ember-source": "~2.16.0",
     "loader.js": "^4.6.0"
   },
   "engines": {
