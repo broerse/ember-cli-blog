@@ -58,7 +58,7 @@
     "ember-service-worker-index": "^0.6.1",
     "ember-simple-auth": "^1.4.0",
     "ember-simple-auth-pouch": "0.1.0-beta.6",
-    "ember-source": "~2.17.0",
+    "ember-source": "~2.18.0",
     "loader.js": "^4.6.0"
   },
   "engines": {
