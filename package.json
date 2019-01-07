@@ -64,7 +64,7 @@
     "ember-service-worker-index": "^0.7.0",
     "ember-simple-auth": "^1.7.0",
     "ember-simple-auth-pouch": "^0.1.0",
-    "ember-source": "~3.6.0",
+    "ember-source": "~3.7.0",
     "eslint-plugin-ember": "^6.0.1",
     "loader.js": "^4.7.0",
     "qunit-dom": "^0.8.0"
