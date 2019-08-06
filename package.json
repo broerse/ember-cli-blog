@@ -64,7 +64,7 @@
     "ember-service-worker-index": "^0.7.0",
     "ember-simple-auth": "^1.8.2",
     "ember-simple-auth-pouch": "^0.1.0",
-    "ember-source": "~3.11.1",
+    "ember-source": "~3.12.0",
     "eslint-plugin-ember": "^6.3.0",
     "eslint-plugin-node": "^9.0.1",
     "license-checker": "^25.0.1",
