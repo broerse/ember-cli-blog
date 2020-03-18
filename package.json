@@ -62,7 +62,7 @@
     "ember-service-worker-cache-first": "^0.6.3",
     "ember-service-worker-index": "^0.7.0",
     "ember-simple-auth": "^3.0.0",
-    "ember-simple-auth-pouch": "^0.1.0",
+    "ember-simple-auth-pouch": "^0.2.0",
     "ember-source": "~3.17.0",
     "eslint-plugin-ember": "^7.7.2",
     "eslint-plugin-node": "^11.0.0",
