@@ -53,7 +53,7 @@
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-noscript": "^4.0.0",
     "ember-pouch": "^6.0.0",
-    "ember-power-select": "^3.0.3",
+    "ember-power-select": "^4.0.0",
     "ember-power-select-blockless": "^0.5.0",
     "ember-qunit": "^4.6.0",
     "ember-resolver": "^7.0.0",
