@@ -64,7 +64,7 @@
     "ember-simple-auth": "^3.0.0",
     "ember-simple-auth-pouch": "^0.1.0",
     "ember-source": "~3.17.0",
-    "eslint-plugin-ember": "^7.7.2",
+    "eslint-plugin-ember": "^8.0.0",
     "eslint-plugin-node": "^11.0.0",
     "license-checker": "^25.0.1",
     "loader.js": "^4.7.0",
