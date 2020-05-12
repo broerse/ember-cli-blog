@@ -1,16 +1,16 @@
 <div class="pagination-centered">
   <ul class="pagination">
-    {{#if canStepBackward}}
+    {{#if this.canStepBackward}}
       <li class="page-item arrow prev enabled-arrow">
-        <a href="#" {{action "incrementPage" -1}} class="page-link">&laquo;</a>
+        <a href="#" {{on "click" (fn this.incrementPage -1)}} class="page-link">&laquo;</a>
       </li>
     {{else}}
       <li class="page-item arrow prev disabled">
-        <a href="#" {{action "incrementPage" -1}} class="page-link">&laquo;</a>
+        <a href="#" {{on "click" (fn this.incrementPage -1)}} class="page-link">&laquo;</a>
       </li>
     {{/if}}
 
-    {{#each pageItems as |item|}}
+    {{#each this.pageItems as |item|}}
       {{#if item.dots}}
         <li class="page-item dots disabled">
           <span>...</span>
@@ -18,22 +18,22 @@
       {{/if}}
       {{#if item.current}}
         <li class="page-item active page-number">
-          <a class="page-link">{{item.page}}</a>
+          <a href="#" class="page-link">{{item.page}}</a>
         </li>
       {{else}}
         <li class="page-item page-number">
-          <a href="#" {{action "pageClicked" item.page}} class="page-link">{{item.page}}</a>
+          <a href="#" {{on "click" (fn this.pageClicked item.page)}} class="page-link">{{item.page}}</a>
         </li>
       {{/if}}
     {{/each}}
 
-    {{#if canStepForward}}
+    {{#if this.canStepForward}}
       <li class="page-item arrow next enabled-arrow">
-        <a href="#" {{action "incrementPage" 1}}class="page-link">&raquo;</a>
+        <a href="#" {{on "click" (fn this.incrementPage 1)}} class="page-link">&raquo;</a>
       </li>
     {{else}}
       <li class="page-item arrow next disabled">
-        <a href="#" {{action "incrementPage" 1}} class="page-link">&raquo;</a>
+        <a href="#" {{on "click" (fn this.incrementPage 1)}} class="page-link">&raquo;</a>
       </li>
     {{/if}}
   </ul>

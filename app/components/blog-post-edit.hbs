@@ -5,7 +5,7 @@
   <p><Input @type="text" @value={{@post.excerpt}} class="form-control" placeholder="Post exercept" /></p>
   <p><MarkdownEditor @value={{@post.body}} @placeholder="Post content" @rows="5" /></p>
 
-  <p><button type="button" class="btn btn-danger" {{on "click" @deletePost}} class="btn btn-default">Delete</button></p>
+  <p><button type="button" class="btn btn-danger" {{on "click" @deletePost}}>Delete</button></p>
 {{else}}
   <p><button type="button" class="btn btn-secondary" {{on "click" this.edit}}>Edit</button></p>
 {{/if}}
