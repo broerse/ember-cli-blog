@@ -2,7 +2,7 @@
 
 <h1>{{@author.name}}</h1>
 
-Posts by {{@author.name}}:
+<p>Posts by {{@author.name}}:</p>
 <ul>
   {{#each @author.posts as |post|}}
     <LinkTo @route="posts.post" @model={{post}}>

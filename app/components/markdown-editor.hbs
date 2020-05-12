@@ -1,0 +1,87 @@
+<div class="markdown-editor-toolbar">
+  {{#each toolbarBtns as |btnGroup|}}
+    <div class="btn-group">
+      {{#each btnGroup as |btn|}}
+        {{#if btn.defaultType}}
+          <button type="button" class="btn btn-light" {{action "applyStyle" btn.regex btn.requireSelection btn.prompt btn.tooltip btn.enter}} title={{t btn.tooltip}} tabindex="-1">
+            {{svg-jar btn.iconSvg size="1" class="markdown-button"}}
+          </button>
+        {{/if}}
+        {{#if btn.undoType}}
+          <button type="button" class="btn btn-light" {{action 'undo'}} title={{t btn.tooltip}} disabled={{noUndo}} tabindex="-1">
+            {{svg-jar btn.iconSvg size="1" class="markdown-button"}}
+          </button>
+        {{/if}}
+        {{#if btn.helpType}}
+          <a class="btn btn-light" title={{t btn.tooltip}} href="{{t btn.href}}" target="_blank" tabindex="-1">
+            {{svg-jar btn.iconSvg size="1" class="markdown-button" fill="#337ab7"}}
+          </a>
+        {{/if}}
+      {{/each}}
+    </div>
+  {{/each}}
+</div>
+
+<div class="markdown-editor-editor">
+  {{textarea
+    focus-out=(action 'handleTextareaBlur')
+    id=textareaId
+    class='markdown-editor-textarea form-control'
+    value=value
+    autofocus=autofocus
+    cols=cols
+    dirname=dirname
+    disabled=disabled
+    form=form
+    maxlength=maxlength
+    name=name
+    placeholder=placeholder
+    readonly=readonly
+    required=required
+    rows=rows
+    tabindex=modalTabindex
+    wrap=wrap
+  }}
+</div>
+
+{{#if modal}}
+  <div class="modal d-block" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        {{#if dialog}}
+          <div class="modal-header">
+            <h5 class="modal-title" id="gridSystemModalLabel">{{t tooltip}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" {{action 'cancel'}}>
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>{{t 'markdown-editor.modal.selectionText'}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" {{action 'cancel'}}>
+              <span>{{svg-jar "check" size="1" fill="white" class="markdown-button"}}</span> &nbsp;{{t 'markdown-editor.modal.confirm'}}</button>
+          </div>
+        {{else}}
+          <div class="modal-header">         
+            <h5 class="modal-title" id="gridSystemModalLabel">{{t tooltip}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" {{action 'cancel'}}>
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>{{input type="text" value=result class="form-control" placeholder=(t promptText)}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" {{action 'confirm' result}}>
+              <span>{{svg-jar "check" size="1" fill="white" class="markdown-button"}}</span> &nbsp;{{t 'markdown-editor.modal.confirm'}}
+            </button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" {{action 'cancel'}}>
+              <span>{{svg-jar "close" size="1" class="markdown-button" fill="#ffffff"}}</span> &nbsp;{{t 'markdown-editor.modal.cancel'}}
+            </button>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+{{/if}}

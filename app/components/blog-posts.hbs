@@ -1,30 +1,31 @@
-<div class="container-fluid">
-  <div class="row">
-    {{!-- blog post listing --}}
-    <div class="col-xs-5">
-      <button type="button" {{on "click" @createPost}}>Create</button> <Input @type="text" @value={{@queryParamsObj.query}} placeholder="Filter Posts" @autofocus="autofocus" @keyDown={{this.resetPage}} />
-      <table class="table">
-        <thead>
-          <tr><th>Recent Posts</th></tr>
-        </thead>
-        <tbody>
-          {{#each this.pagedContent as |post|}}
-            <tr>
-              <td>
-                <LinkTo @route="posts.post" @model={{post}}>
-                  {{post.title}} <small class="muted">by {{post.author.name}}</small>
-                </LinkTo>
-              </td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
-      <PageNumbers @content={{this.pagedContent}} />
+<div class="row mx-3">
+  {{!-- blog post listing --}}
+  <div class="col-5">
+    <div class="form-inline">
+      <button type="button" class="btn btn-secondary col" {{on "click" @createPost}}>Create</button>
+      <Input @type="text" @value={{@queryParamsObj.query}} placeholder="Filter Posts" @autofocus="autofocus" @keyDown={{this.resetPage}} class="form-control col-sm-10" />
     </div>
+    <table class="table">
+      <thead>
+        <tr><th>Recent Posts</th></tr>
+      </thead>
+      <tbody>
+        {{#each this.pagedContent as |post|}}
+          <tr>
+            <td>
+              <LinkTo @route="posts.post" @model={{post}}>
+                {{post.title}} <small class="muted">by {{post.author.name}}</small>
+              </LinkTo>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <PageNumbers @content={{this.pagedContent}} />
+  </div>
 
-    {{!-- blog post content --}}
-    <div class="col-xs-7">
+  {{!-- blog post content --}}
+  <div class="col-7">
       {{yield}}
-    </div>
   </div>
 </div>
