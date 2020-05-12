@@ -1,32 +1,30 @@
-<div class="container-fluid">
-  <div class="row">
-    {{!-- author listing --}}
-    <div class="col-xs-5">
-      <button type="button" {{on "click" @createAuthor}}>Create</button>
-      <table class="table">
-        <thead>
+<div class="row mx-3">
+  {{!-- author listing --}}
+  <div class="col-5">
+    <button type="button" class="btn btn-secondary ml-auto col-2" {{on "click" @createAuthor}}>Create</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Authors</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each this.pagedContent as |author|}}
           <tr>
-            <th>Authors</th>
+            <td>
+              <LinkTo @route="authors.author" @model={{author}}>
+                &bull; {{author.name}}
+              </LinkTo>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {{#each this.pagedContent as |author|}}
-            <tr>
-              <td>
-                <LinkTo @route="authors.author" @model={{author}}>
-                  &bull; {{author.name}}
-                </LinkTo>
-              </td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
-      <PageNumbers @content={{this.pagedContent}} />
-    </div>
+        {{/each}}
+      </tbody>
+    </table>
+    <PageNumbers @content={{this.pagedContent}} />
+  </div>
 
-    {{!-- author content --}}
-    <div class="col-xs-7">
+  {{!-- author content --}}
+  <div class="col-7">
       {{yield}}
-    </div>
   </div>
 </div>
