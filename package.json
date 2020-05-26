@@ -62,7 +62,7 @@
     "ember-service-worker-index": "^0.7.0",
     "ember-simple-auth": "^3.0.0",
     "ember-simple-auth-pouch": "^0.2.0",
-    "ember-source": "~3.18.0",
+    "ember-source": "~3.19.0",
     "ember-svg-jar": "^2.2.3",
     "ember-template-lint": "^2.4.0",
     "eslint": "^6.8.0",
