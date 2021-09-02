@@ -1,9 +1,10 @@
-<BlogPostEdit @post={{@post}} @authors={{@authors}} @isEditing={{@isEditing}} @savePost={{@savePost}} @deletePost={{@deletePost}} />
-
-<h1>{{@post.title}}</h1>
-<h2>by {{@post.author.name}} <small class="muted">({{format-date @post.date}})</small></h2>
-
-<hr>
+<BlogPostEdit @post={{@post}} @authors={{@authors}} @savePost={{@savePost}} @deletePost={{@deletePost}} />
+{{#if this.currentUser.isEditing}}
+  <h2>{{@post.title}}</h2>
+{{/if}}
+<div class="row g-0">
+  <div class="col border-bottom pb-2"><strong>by {{@post.authorName}} <small class="muted">({{format-date @post.date}})</small></strong></div>
+</div>
 
 <div class="intro">
   {{format-markdown @post.excerpt}}

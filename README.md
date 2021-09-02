@@ -41,6 +41,7 @@ To setup a CouchDB instance on your own machine:
 * To use deploy create a file `.env.deploy.production` in the root of this project containing something like `db=https://username:password@my.couchcluster.com/bloggr`
 
 
+<<<<<<< HEAD
 ## Running
 
 * `ember s`
@@ -50,6 +51,10 @@ To setup a CouchDB instance on your own machine:
 
 * `ember test`
 * `ember test --server`
+=======
+* `npm run lint`
+* `npm run lint:fix`
+>>>>>>> b4a56e8 (v3.17.0...v3.28.0)
 
 ## Building
 

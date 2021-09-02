@@ -9,6 +9,7 @@ import auth from 'pouchdb-authentication';
 PouchDB.plugin(auth);
 
 export default class ApplicationAdapter extends Adapter {
+  @service store;
   @service session;
   @service cloudState;
   @service refreshIndicator;

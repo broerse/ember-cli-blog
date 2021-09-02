@@ -9,7 +9,9 @@ export default class AuthorController extends Controller {
     this.model.save();
   }
   @action deleteAuthor() {
+    let posts = this.model.get('posts').toArray();
     this.model.destroyRecord().then(() => {
+      posts.forEach((post)=>{ post.destroyRecord(); });
       this.router.transitionTo('authors');
     });
   }

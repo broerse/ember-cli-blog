@@ -1,6 +1,8 @@
-import { helper } from '@ember/component/helper';
+import Helper from '@ember/component/helper';
 import moment from 'moment';
 
-export default helper(function([value]) {
-  return moment(value).fromNow();
-});
+export default class formatMarkdown extends Helper { 
+  compute(params) {    
+    return moment(params[0]).fromNow();
+  }
+}

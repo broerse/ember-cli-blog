@@ -1,11 +1,23 @@
-{{#if this.isEditing}}
-  <p><button type="button" class="btn btn-secondary" {{on "click" this.doneEditing}}>Done</button></p>
-  <p><Input @type="text" @value={{@post.title}} class="form-control" placeholder="Post title" /></p>
-  <p><PowerSelectBlockless @options={{@authors}} @selected={{@post.author}} @onchange={{fn (mut @post.author)}} @labelPath="name" @placeholder="Post author" /></p>
+{{#if this.currentUser.isEditing}}
+  <div class="row pb-3">
+    <div class="col"><Input @type="text" @value={{@post.title}} class="form-control" placeholder="Post title" /></div>
+    <div class="col-auto"><button type="button" class="btn btn-success" {{on "click" this.doneEditing}}>Done</button></div>  
+  </div>
+  <p>
+    <NativeSelectBox @value={{@post.author}} @onSelect={{fn (mut @post.author)}} class="form-control" placeholder="Post author" as |sb|>
+      <sb.Option @value=""></sb.Option>
+      {{#each @authors as |author|}}
+        <sb.Option @value={{author}}>{{author.name}}</sb.Option>
+      {{/each}}
+    </NativeSelectBox>
+  </p>
   <p><Input @type="text" @value={{@post.excerpt}} class="form-control" placeholder="Post exercept" /></p>
   <p><MarkdownEditor @value={{@post.body}} @placeholder="Post content" @rows="5" /></p>
 
   <p><button type="button" class="btn btn-danger" {{on "click" @deletePost}}>Delete</button></p>
 {{else}}
-  <p><button type="button" class="btn btn-secondary" {{on "click" this.edit}}>Edit</button></p>
+  <div class="row">
+    <div class="col"><h2>{{@post.title}}</h2></div>
+    <div class="col-auto"><button type="button" class="btn btn-primary" {{on "click" this.edit}}>Edit</button></div>  
+  </div>
 {{/if}}

@@ -3,7 +3,7 @@ import { action } from "@ember/object";
 import { inject as service } from '@ember/service';
 
 export default class PostController extends Controller {
-  @inject posts;
+  @inject ('posts') posts;
   @service router;
 
   @action savePost () {
