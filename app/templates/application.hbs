@@ -6,7 +6,7 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded={{if this.expandMenu "true" "false"}} aria-label="Toggle navigation" {{on "click" this.toggleMenu}}>
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class={{if this.expandMenu "navbar-collapse" "collapse navbar-collapse"}} id="navbarSupportedContent">
+      <div class={{if this.expandMenu "navbar-collapse" "collapse navbar-collapse"}} id="navbarSupportedContent" {{on "click" this.closeMenu}}>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <LinkTo @route="posts" class="nav-link">Posts</LinkTo>
@@ -45,6 +45,6 @@
     </div>
   </nav>
 </header>
-<main class="container-fluid pt-3">
+<main class="container-fluid pt-3 overflow-hidden flex-fill" {{on "click" this.closeMenu}}>
   {{outlet}}
 </main>

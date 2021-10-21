@@ -19,10 +19,10 @@ export default class PostsRoute extends Route {
   }
 
   redirect (model, transition) {
-    if (transition.targetName === 'posts.index') {
+    /* if (transition.targetName === 'posts.index') {
       if (model.model.get('length') !== 0) {
         this.router.transitionTo('posts.post', model.model.sortBy('date').reverse().get('firstObject'));
       }
-    }
+    } */
   }
 }

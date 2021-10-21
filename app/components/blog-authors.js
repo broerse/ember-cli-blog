@@ -3,8 +3,10 @@ import { action } from '@ember/object';
 import { sort, alias } from '@ember/object/computed';
 import pagedArray from 'ember-cli-pagination/computed/paged-array';
 import computedFilterByQuery from 'ember-cli-filter-by-query';
+import { inject as service } from '@ember/service';
 
 export default class BlogAuthorsComponent extends Component {
+  @service currentUser;
   
   authorsSorting = Object.freeze(['name']);
   @sort (
