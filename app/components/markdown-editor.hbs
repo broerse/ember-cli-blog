@@ -24,7 +24,8 @@
 
 <div class="markdown-editor-editor">
   <Textarea
-    @focus-out={{fn this.handleTextareaBlur}}
+    {{on "focusout" this.handleTextareaBlur}}
+    
     id={{this.textareaId}}
     class="markdown-editor-textarea form-control"
     @value={{this.value}}

@@ -1,7 +1,9 @@
-import { helper } from '@ember/component/helper';
-import { htmlSafe } from '@ember/string';
+import Helper from '@ember/component/helper';
+import { htmlSafe } from '@ember/template';
 import marked from 'marked';
 
-export default helper(function([value]) {
-  return htmlSafe(marked(value));
-});
+export default class formatMarkdown extends Helper { 
+  compute(params) {    
+    return htmlSafe(marked(params[0]));
+  }
+}
