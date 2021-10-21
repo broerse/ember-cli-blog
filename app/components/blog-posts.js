@@ -3,6 +3,7 @@ import { action } from '@ember/object';
 import { sort, alias } from '@ember/object/computed';
 import pagedArray from 'ember-cli-pagination/computed/paged-array';
 import computedFilterByQuery from 'ember-cli-filter-by-query';
+import { inject as service } from '@ember/service';
 
 // define the handling of the `templates/components/blog-posts.hbs` view, which is used by `posts.hbs` like so:
 // => {{#blog-posts posts=model page=page perPage=perPage query=query createAction="createPost"}}{{outlet}}{{/blog-posts}}
@@ -10,6 +11,8 @@ import computedFilterByQuery from 'ember-cli-filter-by-query';
 // => queryParams: ["page", "perPage", "query"]
 // inside its controller located at `controllers/posts.js`
 export default class BlogPostsComponent extends Component {
+  @service currentUser;
+  
   // take in `posts` from our view
   // and sort it via `postsSorting`
   // into `arrangedContent`

@@ -16,4 +16,8 @@ export default class ApplicationController extends Controller {
   @action toggleMenu(){
     this.expandMenu = !this.expandMenu;
   }
+  
+  @action closeMenu(){
+    this.expandMenu = false;
+  }  
 }
