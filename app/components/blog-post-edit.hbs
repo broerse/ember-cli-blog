@@ -1,7 +1,7 @@
 {{#if this.currentUser.isEditing}}
   <div class="row pb-3">
     <div class="col"><Input @type="text" @value={{@post.title}} class="form-control" placeholder="Post title" /></div>
-    <div class="col-auto"><button type="button" class="btn btn-secondary d-sm-none" {{on "click" @goBack}}>Back</button><button type="button" class="btn btn-success" {{on "click" this.doneEditing}}>Done</button></div>  
+    <div class="col-auto"><button type="button" class="btn btn-secondary d-md-none" {{on "click" @goBack}}>Back</button><button type="button" class="btn btn-success" {{on "click" this.doneEditing}}>Done</button></div>  
   </div>
   <p>
     <NativeSelectBox @value={{@post.author}} @onSelect={{fn (mut @post.author)}} class="form-control" placeholder="Post author" as |sb|>
@@ -18,6 +18,6 @@
 {{else}}
   <div class="row">
     <div class="col"><h2>{{@post.title}}</h2></div>
-    <div class="col-auto"><button type="button" class="btn btn-secondary d-sm-none" {{on "click" @goBack}}>Back</button><button type="button" class="btn btn-primary" {{on "click" this.edit}}>Edit</button></div>  
+    <div class="col-auto"><button type="button" class="btn btn-secondary d-md-none" {{on "click" @goBack}}>Back</button><button type="button" class="btn btn-primary" {{on "click" this.edit}}>Edit</button></div>  
   </div>
 {{/if}}
