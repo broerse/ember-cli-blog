@@ -1,6 +1,6 @@
 export function initialize(application) {
   var globals = {
-    isEditing: false
+    isEditing: false,
   };
 
   application.register('globals:main', globals, { instantiate: false });
@@ -9,5 +9,5 @@ export function initialize(application) {
 
 export default {
   name: 'globals',
-  initialize: initialize
+  initialize: initialize,
 };

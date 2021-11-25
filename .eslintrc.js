@@ -17,14 +17,14 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   env: {
-    browser: true
+    browser: true,
   },
   rules: {
     'ember/no-jquery': 'error',
     'ember/no-mixins': 'off',
-    'ember/no-new-mixins': 'off'
+    'ember/no-new-mixins': 'off',
+    'ember/no-computed-properties-in-native-classes': 'off',
   },
-  rules: {},
   overrides: [
     // node files
     {
@@ -32,7 +32,7 @@ module.exports = {
         '.ember-cli.js',
         '.eslintrc.js',
         '.prettierrc.js',
-        '.template-lintrc.js',        
+        '.template-lintrc.js',
         'ember-cli-build.js',
         'testem.js',
         'blueprints/*/index.js',
@@ -55,10 +55,5 @@ module.exports = {
         'node/no-unpublished-require': 'off',
       },
     },
-    //{
-      // Test files:
-    //  files: ['tests/**/*-test.{js,ts}'],
-    //  extends: ['plugin:qunit/recommended'],
-    //},
   ],
 };

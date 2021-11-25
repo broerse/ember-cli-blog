@@ -1,18 +1,18 @@
-import Controller, { inject }  from '@ember/controller';
-import { action } from "@ember/object";
+import Controller, { inject } from '@ember/controller';
+import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
 export default class PostController extends Controller {
-  @inject ('posts') posts;
+  @inject('posts') posts;
   @service router;
   @service currentUser;
 
-  @action goBack () {
+  @action goBack() {
     this.currentUser.isViewing = false;
     this.router.transitionTo('posts');
   }
 
-  @action savePost () {
+  @action savePost() {
     this.model.save();
   }
 

@@ -4,7 +4,7 @@ import { inject as service } from '@ember/service';
 
 export default class BlogAuthorEditComponent extends Component {
   @service currentUser;
-  
+
   @action edit() {
     this.currentUser.isEditing = true;
   }

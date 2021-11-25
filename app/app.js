@@ -7,7 +7,7 @@ import marked from 'marked';
 marked.setOptions({
   renderer: new marked.Renderer(),
   breaks: true,
-  gfm: true
+  gfm: true,
 });
 
 export default class App extends Application {

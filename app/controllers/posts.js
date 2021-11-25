@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
-import { action } from "@ember/object";
+import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
 class QueryParamsObj {
@@ -14,17 +14,17 @@ export default class PostsController extends Controller {
   @service router;
   @service store;
 
-  queryParams= [
-    {'queryParamsObj.page': 'page'},
-    {'queryParamsObj.perPage': 'perPage'},
-    {'queryParamsObj.query': 'query'}
+  queryParams = [
+    { 'queryParamsObj.page': 'page' },
+    { 'queryParamsObj.perPage': 'perPage' },
+    { 'queryParamsObj.query': 'query' },
   ];
   queryParamsObj = new QueryParamsObj();
-  
+
   @action createPost() {
     this.currentUser.isEditing = true;
     let newPost = this.store.createRecord('post');
-    newPost.set('date' , new Date());
+    newPost.set('date', new Date());
     this.router.transitionTo('posts.post', newPost.save());
   }
 }

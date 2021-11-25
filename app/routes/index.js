@@ -3,8 +3,8 @@ import { inject as service } from '@ember/service';
 
 export default class IndexRoute extends Route {
   @service router;
-  
-  beforeModel () {
+
+  beforeModel() {
     this.router.transitionTo('posts');
   }
 }

@@ -1,23 +1,21 @@
 import Controller from '@ember/controller';
-import { action } from "@ember/object";
+import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
-import { tracked } from '@glimmer/tracking';
 
 export default class ApplicationController extends Controller {
   @service session;
   @service cloudState;
+  @service currentUser;
 
   @action logout() {
     this.session.invalidate();
   }
-  
-  
-  @tracked expandMenu = false;
-  @action toggleMenu(){
-    this.expandMenu = !this.expandMenu;
+
+  @action toggleMenu() {
+    this.currentUser.expandMenu = !this.currentUser.expandMenu;
   }
-  
-  @action closeMenu(){
-    this.expandMenu = false;
-  }  
+
+  @action closeMenu() {
+    this.currentUser.expandMenu = false;
+  }
 }

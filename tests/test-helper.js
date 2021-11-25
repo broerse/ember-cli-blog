@@ -10,4 +10,3 @@ setApplication(Application.create(config.APP));
 setup(QUnit.assert);
 
 start();
-

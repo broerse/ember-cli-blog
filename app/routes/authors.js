@@ -3,8 +3,8 @@ import { inject as service } from '@ember/service';
 
 export default class AuthorsRoute extends Route {
   @service store;
-  
-  model () {
+
+  model() {
     return this.store.findAll('author');
   }
 }

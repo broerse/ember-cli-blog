@@ -1,6 +1,8 @@
 {{#if this.currentUser.isEditing}}
   <div class="row pb-3">
-    <div class="col"><Input @type="text" @value={{@author.name}} class="form-control" placeholder="Author name" /></div>
+    <div class="col">
+      <Input @type="text" @value={{@author.name}} class="form-control" placeholder="Author name" aria-label="Author name" />
+    </div>
     <div class="col-auto"><button type="button" class="btn btn-secondary d-md-none" {{on "click" @goBack}}>Back</button><button type="button" class="btn btn-success" {{on "click" this.doneEditing}}>Done</button></div>  
   </div>
   <p><button type="button" class="btn btn-danger" {{on "click" @deleteAuthor}}>Delete</button></p>

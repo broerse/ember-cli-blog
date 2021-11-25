@@ -1,6 +1,6 @@
 {{#if this.currentUser.isEditing}}
   <div class="row pb-3">
-    <div class="col"><Input @type="text" @value={{@post.title}} class="form-control" placeholder="Post title" /></div>
+    <div class="col"><Input @type="text" @value={{@post.title}} class="form-control" placeholder="Post title" aria-label="Post title" /></div>
     <div class="col-auto"><button type="button" class="btn btn-secondary d-md-none" {{on "click" @goBack}}>Back</button><button type="button" class="btn btn-success" {{on "click" this.doneEditing}}>Done</button></div>  
   </div>
   <p>
@@ -11,7 +11,7 @@
       {{/each}}
     </NativeSelectBox>
   </p>
-  <p><Input @type="text" @value={{@post.excerpt}} class="form-control" placeholder="Post exercept" /></p>
+  <p><Input @type="text" @value={{@post.excerpt}} class="form-control" placeholder="Post exercept" aria-label="Post exercept" /></p>
   <p><MarkdownEditor @value={{@post.body}} @placeholder="Post content" @rows="5" /></p>
 
   <p><button type="button" class="btn btn-danger" {{on "click" @deletePost}}>Delete</button></p>

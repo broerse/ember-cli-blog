@@ -3,10 +3,10 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light border border-start-0 border-end-0">
     <div class="container-fluid mx-3">
       <LinkTo @route="application" class="navbar-brand">Bloggr</LinkTo>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded={{if this.expandMenu "true" "false"}} aria-label="Toggle navigation" {{on "click" this.toggleMenu}}>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded={{if this.currentUser.expandMenu "true" "false"}} aria-label="Toggle navigation" {{on "click" this.toggleMenu}}>
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class={{if this.expandMenu "navbar-collapse" "collapse navbar-collapse"}} id="navbarSupportedContent" {{on "click" this.closeMenu}}>
+      <div class={{if this.currentUser.expandMenu "navbar-collapse" "collapse navbar-collapse"}} id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <LinkTo @route="posts" class="nav-link">Posts</LinkTo>
@@ -30,7 +30,7 @@
           </span>          
           {{#if this.session.isAuthenticated}}
             <li class="nav-item pe-2">
-              <a href="#" {{on "click" this.logout}} class="nav-link">Logout</a>
+              <span {{on "click" this.logout}} role="button" class="nav-link">Logout</span>
             </li>
           {{else}}
             <li class="nav-item pe-2">
@@ -45,6 +45,6 @@
     </div>
   </nav>
 </header>
-<main class="container-fluid pt-3 overflow-hidden flex-fill" {{on "click" this.closeMenu}}>
+<main class="container-fluid pt-3 overflow-hidden flex-fill" role="button" {{on "click" this.closeMenu}}>
   {{outlet}}
 </main>
