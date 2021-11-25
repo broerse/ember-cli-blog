@@ -17,4 +17,3 @@ Router.map(function() {
     this.route('author', { path: ':author_id' });
   });
 });
-

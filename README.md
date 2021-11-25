@@ -1,6 +1,6 @@
 # Myapp
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/broerse/ember-cli-blog.svg)](https://greenkeeper.io/)
+[![Known Vulnerabilities](https://snyk.io/test/github/broerse/ember-cli-blog/badge.svg)](https://snyk.io/test/github/broerse/ember-cli-blog)
 
 This README outlines the details of collaborating on this Ember application.
 

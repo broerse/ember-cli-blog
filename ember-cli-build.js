@@ -9,12 +9,6 @@ module.exports = function(defaults) {
     'ember-cli-babel': {
       includePolyfill: true
     },
-    // Add fonts to Service Worker cache first
-    'esw-cache-first': {
-      patterns: [
-        'fonts/fontawesome(.+)',
-      ]
-    },
     'ember-service-worker': {
       versionStrategy: 'every-build',
       enabled: config != 'development'
@@ -43,7 +37,7 @@ module.exports = function(defaults) {
           { removeViewBox: false }
         ]
       },
-    }    
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
