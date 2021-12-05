@@ -1,9 +1,9 @@
-module.exports = function(deployTarget) {
-  var ENV = { };
+module.exports = function (deployTarget) {
+  var ENV = {};
 
   if (deployTarget === 'production') {
     ENV.couchdb = {
-      db: process.env.db
+      db: process.env.db,
     };
   }
 

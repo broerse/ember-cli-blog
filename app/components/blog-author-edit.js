@@ -1,15 +1,15 @@
 import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default class BlogAuthorEditComponent extends Component {
-  @tracked isEditing;
+  @service currentUser;
 
   @action edit() {
-    this.isEditing = true;
+    this.currentUser.isEditing = true;
   }
   @action doneEditing() {
-    this.isEditing = false;
+    this.currentUser.isEditing = false;
     this.args.saveAuthor();
   }
 }

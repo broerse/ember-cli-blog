@@ -1,0 +1,45 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+
+svg{shape-rendering: geometricPrecision;}
+
+p.spinner { padding-top: 2px; margin-left: 8px; margin-right: 8px; }
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }  
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.spin {
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.navbar-btn { float: left; }
+.push { color: red; }
+.push-enabled { color: green; }
+
+.push svg { fill: red;}
+.push-enabled svg { fill: green;}
+#title svg { fill: #337ab7; vertical-align: bottom; margin-bottom: 2px; width: 37px; height: 37px;}
+
+.select-box{
+  appearance: auto!important;
+}
+
+.below-the-fold table { margin-bottom: 10px; }
+.below-the-fold table thead { border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; }
+.below-the-fold table thead th { background-color: #f5f5f5; }
+.below-the-fold table th, .below-the-fold table td { background-color: #fff; border: 1px solid #ddd; padding: 8px; }

@@ -1,7 +1,10 @@
 import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
 export default class IndexRoute extends Route {
-  beforeModel () {
-    this.transitionTo('posts');
+  @service router;
+
+  beforeModel() {
+    this.router.transitionTo('posts');
   }
 }

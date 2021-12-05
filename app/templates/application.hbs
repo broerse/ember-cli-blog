@@ -1,55 +1,50 @@
 <header>
   <h1 id="title" class="mx-3">Welcome to Ember.js <a href="https://github.com/broerse/ember-cli-blog" title="GitHub Source">{{svg-jar "github" class="title"}}</a></h1>
-  <nav class="navbar navbar-light bg-light navbar-expand mx-3 border">
-    <LinkTo @route="application" class="navbar-brand">
-      Bloggr
-    </LinkTo>
-    <ul class="navbar-nav mr-auto">
-      <ActiveLink class="nav-item">
-        <LinkTo @route="posts" class="nav-link">
-          Posts
-        </LinkTo>
-      </ActiveLink>
-      <ActiveLink class="nav-item">
-        <LinkTo @route="authors" class="nav-link">
-          Authors
-        </LinkTo>
-      </ActiveLink>
-      <ActiveLink class="nav-item">
-        <LinkTo @route="about" class="nav-link">
-          About
-        </LinkTo>
-      </ActiveLink>
-      <ActiveLink class="nav-item">
-        <LinkTo @route="secret" class="nav-link">
-          Secret
-        </LinkTo>
-      </ActiveLink>
-    </ul>
-    <div class="navbar-nav ml-auto">
-      <span class="push {{if this.cloudState.cloudPull "push-enabled"}} navbar-text px-3" title="Pull data">
-          {{svg-jar "cloud-download" size=2}} Pull {{if this.cloudState.cloudPull "synced" "not synced"}}
-      </span>          
-      <span class="push {{if this.cloudState.cloudPush "push-enabled"}} navbar-text px-3" title="Push data">
-          {{svg-jar "cloud-upload" size=2}} Push {{if this.cloudState.cloudPush "synced" "not synced"}}
-      </span>          
-      {{#if this.session.isAuthenticated}}
-        <li class="nav-item px-3">
-          <a href="#" {{on "click" this.logout}} class="nav-link">Logout</a>
-        </li>
-      {{else}}
-        <ActiveLink class="nav-item px-3">
-          <LinkTo @route="login" class="nav-link">
-            Login
-          </LinkTo>
-        </ActiveLink>
-      {{/if}}
-      <span class="navbar-text spinner">
-        <RefreshIndicator @spin={{this.isSpinning}} />
-      </span>          
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border border-start-0 border-end-0">
+    <div class="container-fluid mx-3">
+      <LinkTo @route="application" class="navbar-brand">Bloggr</LinkTo>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded={{if this.currentUser.expandMenu "true" "false"}} aria-label="Toggle navigation" {{on "click" this.toggleMenu}}>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class={{if this.currentUser.expandMenu "navbar-collapse" "collapse navbar-collapse"}} id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <LinkTo @route="posts" class="nav-link">Posts</LinkTo>
+          </li>
+          <li class="nav-item">
+            <LinkTo @route="authors" class="nav-link">Authors</LinkTo>
+          </li>
+          <li class="nav-item">
+            <LinkTo @route="about" class="nav-link">About</LinkTo>
+          </li>
+          <li class="nav-item">
+            <LinkTo @route="secret" class="nav-link">Secret</LinkTo>
+          </li>
+        </ul>
+        <div class="navbar-nav ms-auto">
+          <span class="push {{if this.cloudState.cloudPull "push-enabled"}} navbar-text pe-2" title="Pull data">
+              {{svg-jar "cloud-download" size=2}} Pull {{if this.cloudState.cloudPull "synced" "not synced"}}
+          </span>          
+          <span class="push {{if this.cloudState.cloudPush "push-enabled"}} navbar-text pe-2" title="Push data">
+              {{svg-jar "cloud-upload" size=2}} Push {{if this.cloudState.cloudPush "synced" "not synced"}}
+          </span>          
+          {{#if this.session.isAuthenticated}}
+            <li class="nav-item pe-2">
+              <span {{on "click" this.logout}} role="button" class="nav-link">Logout</span>
+            </li>
+          {{else}}
+            <li class="nav-item pe-2">
+              <LinkTo @route="login" class="nav-link">Login</LinkTo>
+            </li>
+          {{/if}}
+          <span class="navbar-text spinner">
+            <RefreshIndicator @spin={{this.isSpinning}} />
+          </span>          
+        </div>
+      </div>
     </div>
   </nav>
 </header>
-<main class="container-fluid pt-3">
+<main class="container-fluid pt-3 overflow-hidden flex-fill" role="button" {{on "click" this.closeMenu}}>
   {{outlet}}
 </main>

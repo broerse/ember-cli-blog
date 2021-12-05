@@ -51,6 +51,7 @@ To setup a CouchDB instance on your own machine:
 * `ember test`
 * `ember test --server`
 
+
 ## Building
 
 * `ember build` (development)

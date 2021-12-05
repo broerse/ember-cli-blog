@@ -1,31 +1,43 @@
 <div class="row mx-3">
   {{!-- blog post listing --}}
-  <div class="col-5">
-    <div class="form-inline">
-      <button type="button" class="btn btn-secondary col" {{on "click" @createPost}}>Create</button>
-      <Input @type="text" @value={{@queryParamsObj.query}} placeholder="Filter Posts" @autofocus="autofocus" @keyDown={{this.resetPage}} class="form-control col-sm-10" />
+  <div class={{if this.currentUser.isViewing "d-none d-md-block col-md-5" "col-12 col-md-5"}}>
+    <div class="row">
+      <div class="col">
+        <Input @type="text" @value={{@queryParamsObj.query}} placeholder="Filter Posts" aria-label="Filter Posts" autofocus={{true}} {{on "keyup" this.resetPage}} class="form-control" />
+      </div>
+      <div class="col-auto">  
+        <button type="button" class="btn btn-primary" {{on "click" @createPost}}>Create</button>
+      </div>
     </div>
-    <table class="table">
-      <thead>
-        <tr><th>Recent Posts</th></tr>
-      </thead>
-      <tbody>
-        {{#each this.pagedContent as |post|}}
-          <tr>
-            <td>
-              <LinkTo @route="posts.post" @model={{post}}>
-                {{post.title}} <small class="muted">by {{post.author.name}}</small>
-              </LinkTo>
-            </td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
-    <PageNumbers @content={{this.pagedContent}} />
+    <div class="row">
+      <div class="col">
+        <table class="table">
+          <thead>
+            <tr><th>Recent Posts</th></tr>
+          </thead>
+          <tbody>
+            {{#each this.pagedContent as |post|}}
+              <tr>
+                <td>
+                  <LinkTo @route="posts.post" @model={{post}}>
+                    {{post.title}} <small class="muted">by {{post.author.name}}</small>
+                  </LinkTo>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <PageNumbers @content={{this.pagedContent}} />
+      </div>
+    </div>
   </div>
 
   {{!-- blog post content --}}
-  <div class="col-7">
-      {{yield}}
+  <div class={{if this.currentUser.isViewing "col-12 col-md-7" "d-none d-md-block col-md-7" }}>
+    {{yield}}
   </div>
 </div>

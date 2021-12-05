@@ -1,8 +1,7 @@
-<BlogAuthorEdit @author={{@author}} @isEditing={{@isEditing}} @saveAuthor={{@saveAuthor}} @deleteAuthor={{@deleteAuthor}} />
-
-<h1>{{@author.name}}</h1>
-
-<p>Posts by {{@author.name}}:</p>
+<BlogAuthorEdit @author={{@author}} @goBack={{@goBack}} @saveAuthor={{@saveAuthor}} @deleteAuthor={{@deleteAuthor}} />
+<div class="row g-0">
+  <div class="col border-bottom pb-2"><strong>Posts by {{@author.name}}:</strong></div>
+</div>
 <ul>
   {{#each @author.posts as |post|}}
     <LinkTo @route="posts.post" @model={{post}}>
