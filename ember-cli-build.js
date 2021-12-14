@@ -56,10 +56,6 @@ module.exports = function (defaults) {
     using: [{ transformation: 'amd', as: 'moment' }],
   });
 
-  app.import('node_modules/marked/marked.min.js', {
-    using: [{ transformation: 'amd', as: 'marked' }],
-  });
-
   // app.import('node_modules/bootstrap/dist/css/bootstrap.min.css');
 
   return app.toTree();
