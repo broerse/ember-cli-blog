@@ -23,9 +23,9 @@ export default class PostsController extends Controller {
 
   @action createPost() {
     this.currentUser.isEditing = true;
-    let newPost = this.store.createRecord('post', { 'date': new Date() });
-    newPost.save().then(()=>{
+    let newPost = this.store.createRecord('post', { date: new Date() });
+    newPost.save().then(() => {
       this.router.transitionTo('posts.post', newPost);
-    });    
+    });
   }
 }

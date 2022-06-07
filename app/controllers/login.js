@@ -14,8 +14,8 @@ export default class LoginController extends Controller {
     this.session
       .authenticate('authenticator:pouch', identification, password)
       .then(() => {
-        //set(this, 'username', '');
-        //set(this, 'password', '');
+        set(this, 'username', '');
+        set(this, 'password', '');
       })
       .catch((reason) => {
         this.errorMessage = reason.message || reason;

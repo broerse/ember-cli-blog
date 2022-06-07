@@ -23,7 +23,7 @@ export default class PostsRoute extends Route {
       if (model.model.get('length') !== 0) {
         this.router.transitionTo(
           'posts.post',
-          model.model.sortBy('date').reverse().get('firstObject'),
+          model.model.sortBy('date').reverse().get('firstObject')
         );
       }
     }

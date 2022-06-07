@@ -9,7 +9,7 @@ export default class ApplicationRoute extends Route {
 
   beforeModel() {
     super.init(...arguments);
-    this.session.setup();    
+    this.session.setup();
     return this.intl.setLocale(['en-us']);
   }
 

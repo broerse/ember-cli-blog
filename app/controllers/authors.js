@@ -23,7 +23,7 @@ export default class AuthorController extends Controller {
   @action createAuthor() {
     this.currentUser.isEditing = true;
     let newauthor = this.store.createRecord('author');
-    newauthor.save().then(()=>{
+    newauthor.save().then(() => {
       this.router.transitionTo('authors.author', newauthor);
     });
   }
