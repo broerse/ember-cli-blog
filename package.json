@@ -86,6 +86,9 @@
     "sass": "^1.52.2",
     "webpack": "^5.72.1"
   },
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
   "engines": {
     "node": "12.* || 14.* || >= 16"
   },
