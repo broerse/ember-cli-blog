@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - master
+      - ember-4-update
   pull_request: {}
 
 concurrency:
