@@ -46,7 +46,7 @@
     "ember-cli-htmlbars": "^6.0.1",
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-cli-markdown-editor": "^0.4.0",
-    "ember-cli-pagination": "segoja/ember-cli-pagination#master",
+    "ember-cli-pagination": "^4.0.0-alpha.1",
     "ember-cli-sass": "^11.0.1",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
