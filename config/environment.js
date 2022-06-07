@@ -5,7 +5,7 @@ module.exports = function (environment) {
     modulePrefix: 'myapp',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'history',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -43,7 +43,8 @@ module.exports = function (environment) {
     ENV.APP.autoboot = false;
   }
 
-  ENV.remote_couch = 'https://my.couchcluster.com/bloggr'; // 'http://localhost:5984/bloggr';
+  //ENV.remote_couch = 'https://my.couchcluster.com/bloggr'; // 'http://localhost:5984/bloggr';
+  ENV.remote_couch = 'https://datasource.couch:6984/bloggr';
   ENV.local_couch = 'bloggr';
   ENV.authAdapter = 'application';
   if (environment === 'production') {

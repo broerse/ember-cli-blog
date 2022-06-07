@@ -20,25 +20,22 @@ module.exports = {
     browser: true,
   },
   rules: {
-    'ember/no-jquery': 'error',
-    'ember/no-mixins': 'off',
-    'ember/no-new-mixins': 'off',
-    'ember/no-computed-properties-in-native-classes': 'off',
+    // This rule is to avoid errors by ember-cli-pagination setup on components as the addon needs work still.
+    'ember/no-computed-properties-in-native-classes': 0,
   },
   overrides: [
     // node files
     {
       files: [
-        '.ember-cli.js',
-        '.eslintrc.js',
-        '.prettierrc.js',
-        '.template-lintrc.js',
-        'ember-cli-build.js',
-        'testem.js',
-        'blueprints/*/index.js',
-        'config/**/*.js',
-        'lib/*/index.js',
-        'server/**/*.js',
+        './.eslintrc.js',
+        './.prettierrc.js',
+        './.template-lintrc.js',
+        './ember-cli-build.js',
+        './testem.js',
+        './blueprints/*/index.js',
+        './config/**/*.js',
+        './lib/*/index.js',
+        './server/**/*.js',
       ],
       parserOptions: {
         sourceType: 'script',
@@ -54,6 +51,11 @@ module.exports = {
         // https://github.com/mysticatea/eslint-plugin-node/issues/77
         'node/no-unpublished-require': 'off',
       },
+    },
+    {
+      // test files
+      files: ['tests/**/*-test.{js,ts}'],
+      extends: ['plugin:qunit/recommended'],
     },
   ],
 };

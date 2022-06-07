@@ -12,9 +12,10 @@ This README outlines the details of collaborating on this Ember application.
 
 You will need the following things properly installed on your computer.
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Ember CLI](http://ember-cli.com/)
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/) (with npm)
+* [Ember CLI](https://cli.emberjs.com/release/)
+* [Google Chrome](https://google.com/chrome/)
 
 ## Installation
 
@@ -106,6 +107,7 @@ There is one `secret` route setup to demonstrate how to use ember-simple-auth to
 * [ember-cli-deploy-couchdb](https://github.com/martinic/ember-cli-deploy-couchdb)
 * [ember-simple-auth](https://ember-simple-auth.com/)
 * [ember-simple-auth-pouch](https://github.com/martinic/ember-simple-auth-pouch)
+
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)

@@ -4,6 +4,10 @@ import { marked } from 'marked';
 
 export default class formatMarkdown extends Helper {
   compute(params) {
-    return htmlSafe(marked(params[0]));
+    var result = '';
+    if (params[0]) {
+      result = htmlSafe(marked(params[0]));
+    }
+    return result;
   }
 }

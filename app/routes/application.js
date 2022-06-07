@@ -5,9 +5,12 @@ import { action } from '@ember/object';
 export default class ApplicationRoute extends Route {
   @service session;
   @service currentUser;
+  @service intl;
 
-  async beforeModel() {
-    await this.session.setup();
+  beforeModel() {
+    super.init(...arguments);
+    this.session.setup();
+    return this.intl.setLocale(['en-us']);
   }
 
   @action willTransition() {

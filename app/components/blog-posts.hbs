@@ -1,11 +1,18 @@
 <div class="row mx-3">
-  {{!-- blog post listing --}}
+  {{! blog post listing }}
   <div class={{if this.currentUser.isViewing "d-none d-md-block col-md-5" "col-12 col-md-5"}}>
     <div class="row">
       <div class="col">
-        <Input @type="text" @value={{@queryParamsObj.query}} placeholder="Filter Posts" aria-label="Filter Posts" autofocus={{true}} {{on "keyup" this.resetPage}} class="form-control" />
+        <Input
+          @type="text"
+          @value={{@queryParamsObj.query}}
+          placeholder="Filter Posts"
+          aria-label="Filter Posts"
+          {{on "keyup" this.resetPage}}
+          class="form-control"
+        />
       </div>
-      <div class="col-auto">  
+      <div class="col-auto">
         <button type="button" class="btn btn-primary" {{on "click" @createPost}}>Create</button>
       </div>
     </div>
@@ -20,7 +27,8 @@
               <tr>
                 <td>
                   <LinkTo @route="posts.post" @model={{post}}>
-                    {{post.title}} <small class="muted">by {{post.author.name}}</small>
+                    {{post.title}}
+                    <small class="muted">by {{post.author.name}}</small>
                   </LinkTo>
                 </td>
               </tr>
@@ -36,8 +44,8 @@
     </div>
   </div>
 
-  {{!-- blog post content --}}
-  <div class={{if this.currentUser.isViewing "col-12 col-md-7" "d-none d-md-block col-md-7" }}>
+  {{! blog post content }}
+  <div class={{if this.currentUser.isViewing "col-12 col-md-7" "d-none d-md-block col-md-7"}}>
     {{yield}}
   </div>
 </div>
