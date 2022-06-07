@@ -8,7 +8,6 @@ class QueryParamsObj {
   @tracked perPage = 5;
   @tracked query = '';
 }
-
 export default class AuthorController extends Controller {
   @service currentUser;
   @service router;
@@ -24,6 +23,8 @@ export default class AuthorController extends Controller {
   @action createAuthor() {
     this.currentUser.isEditing = true;
     let newauthor = this.store.createRecord('author');
-    this.router.transitionTo('authors.author', newauthor.save());
+    newauthor.save().then(()=>{
+      this.router.transitionTo('authors.author', newauthor);
+    });
   }
 }

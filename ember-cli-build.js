@@ -5,15 +5,13 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function (defaults) {
   let config = process.env.EMBER_ENV || 'development';
   let app = new EmberApp(defaults, {
-    // IE 11 needs a Polyfill for startsWith
-    'ember-cli-babel': {
-      includePolyfill: true,
-    },
     'ember-service-worker': {
       versionStrategy: 'every-build',
       enabled: config != 'development',
     },
-
+    'ember-simple-auth': {
+      useSessionSetupMethod: true,
+    },
     // Exclude .png favicons from being fingerprinted
     fingerprint: {
       exclude: [
@@ -24,9 +22,6 @@ module.exports = function (defaults) {
         'favicon-32x32.png',
         'mstile-150x150.png',
       ],
-    },
-    'ember-power-select': {
-      theme: 'bootstrap',
     },
     svgJar: {
       strategy: 'inline',
@@ -57,6 +52,22 @@ module.exports = function (defaults) {
   });
 
   // app.import('node_modules/bootstrap/dist/css/bootstrap.min.css');
+  /*
+  const { Webpack } = require('@embroider/webpack');
+  return require('@embroider/compat').compatBuild(app, Webpack, {
+    skipBabel: [
+      {
+        package: 'qunit',
+      },
+    ],
+    packagerOptions: {
+      webpackConfig: {
+        node: {
+          global: true,
+        },
+      },
+    },
+  }); */
 
-  return app.toTree();
+  return app.toTree();  
 };

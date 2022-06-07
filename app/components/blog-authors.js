@@ -12,12 +12,10 @@ export default class BlogAuthorsComponent extends Component {
   @sort('args.authors', 'authorsSorting') arrangedContent;
 
   // `arrangedContent` is then used by this filter to create `filteredContent`
-  @computedFilterByQuery(
-    'arrangedContent',
-    ['name'],
-    'args.queryParamsObj.query',
-    { conjunction: 'and', sort: false }
-  )
+  @computedFilterByQuery('arrangedContent', ['name'], 'args.queryParamsObj.query', {
+    conjunction: 'and',
+    sort: false,
+  })
   filteredContent;
 
   @pagedArray('filteredContent', {

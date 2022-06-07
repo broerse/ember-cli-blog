@@ -28,7 +28,7 @@ export default class BlogPostsComponent extends Component {
     'arrangedContent',
     ['title', 'body', 'authorName', 'excerpt'],
     'args.queryParamsObj.query',
-    { conjunction: 'and', sort: false }
+    { conjunction: 'and', sort: false },
   )
   filteredContent;
 

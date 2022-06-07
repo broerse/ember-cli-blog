@@ -1,15 +1,33 @@
 <div class="row mx-3">
   <div class="col">
-    <p>Login with your CloudStation account. Create one for free <a href="https://cloudstation.com/en/register" title="Create a Free CloudStation account">here</a>.</p>
+    <p>Login with your CloudStation account. Create one for free
+      <a
+        href="https://cloudstation.com/en/register"
+        title="Create a Free CloudStation account"
+      >here</a>.</p>
     <p>
       <form class="form-inline" {{on "submit" this.authenticate}}>
         <div class="form-group">
-          <label class="visually-hidden" for="identification">Username</label>
-          <input class="form-control" id="identification" placeholder="Username" type="text" name="identification" />
+          <label class="visually-hidden" for="username">Username</label>
+          <input
+            class="form-control"
+            id="username"
+            placeholder="username"
+            type="text"
+            name="username"
+            autocomplete="on"
+          />
         </div>
         <div class="form-group my-2">
           <label class="visually-hidden" for="password">Password</label>
-          <input class="form-control" id="password" placeholder="Password" type="password" name="password" />
+          <input
+            class="form-control"
+            id="password"
+            placeholder="password"
+            type="password"
+            name="password"
+            autocomplete="on"
+          />
         </div>
         <button type="submit" class="btn btn-secondary">Login</button>
         {{#if this.errorMessage}}
