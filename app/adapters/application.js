@@ -1,12 +1,25 @@
 import config from '../config/environment';
-import PouchDB from 'ember-pouch/pouchdb';
 import { Adapter } from 'ember-pouch';
 import { assert } from '@ember/debug';
 import { isEmpty } from '@ember/utils';
 import { inject as service } from '@ember/service';
+
+import PouchDB from 'pouchdb-core';
+import PouchDBFind from 'pouchdb-find';
+import PouchDBRelational from 'relational-pouch';
+import indexeddb from 'pouchdb-adapter-indexeddb';
+import HttpPouch from 'pouchdb-adapter-http';
+import mapreduce from 'pouchdb-mapreduce';
+import replication from 'pouchdb-replication';
 import auth from 'pouchdb-authentication';
 
-PouchDB.plugin(auth);
+PouchDB.plugin(PouchDBFind)
+  .plugin(PouchDBRelational)
+  .plugin(indexeddb)
+  .plugin(HttpPouch)
+  .plugin(mapreduce)
+  .plugin(replication)
+  .plugin(auth);
 
 export default class ApplicationAdapter extends Adapter {
   @service store;
