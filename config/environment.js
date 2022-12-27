@@ -45,7 +45,7 @@ module.exports = function (environment) {
 
   //ENV.remote_couch = 'https://my.couchcluster.com/bloggr'; // 'http://localhost:5984/bloggr';
   ENV.remote_couch = 'https://datasource.couch:6984/bloggr';
-  ENV.local_couch = 'bloggr';
+  ENV.local_couch = 'bloggr-i';
   ENV.authAdapter = 'application';
   if (environment === 'production') {
     ENV.rootURL = '/';
