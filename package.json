@@ -89,7 +89,7 @@
     "prettier": "^2.6.2",
     "qunit": "^2.19.1",
     "qunit-dom": "^2.0.0",
-    "relational-pouch": "^4.0.3",
+    "relational-pouch": "^4.1.1",
     "sass": "^1.52.2",
     "webpack": "^5.72.1"
   },
